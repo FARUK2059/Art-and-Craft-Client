@@ -1,10 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import userIcon from "../../../public/userIcon.png"
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { LuUser2 } from "react-icons/lu";
+import { toast } from "react-toastify";
 
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                toast.success("Your LogOut successfull")
+            })
+            .catch()
+    }
+
     const links = <>
-        
+
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/blog">blog</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
@@ -22,7 +37,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <Link to="/" className="btn btn-ghost text-xl">CraftXtor</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -30,7 +45,30 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {
+                        user ?
+                            <Link to="/">
+                                <div className="tooltip tooltip-left " data-tip={user?.displayName || "not found"}>
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-4">
+                                        <div className="w-10 rounded-full">
+                                            <img alt="null" src={user?.photoURL || userIcon} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                            :
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-4">
+                                <div className="w-10 rounded-full">
+                                    <img alt="Tailwind CSS Navbar component" src={userIcon} />
+                                </div>
+                            </div>
+                    }
+
+                    {
+                        user ? <Link to="/"><button onClick={handleSignOut} className="btn btn-active btn-primary rounded-full"> <LuUser2 />Sign Out</button></Link> :
+                            <Link to="/login"><button className="btn btn-active btn-primary rounded-full"><LuUser2 />Login</button></Link>
+                    }
+
                 </div>
             </div>
         </div>
