@@ -3,7 +3,7 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -22,6 +22,10 @@ const LogIn = () => {
         updateTitle('Login | Craft Store');
     }, [updateTitle]);
 
+    // Navigation System
+    const location = useLocation();
+    const navigat = useNavigate();
+
 
     // password Login
     const handleLogin = e => {
@@ -34,9 +38,10 @@ const LogIn = () => {
         signInPassword(email, password)
             .then(result => {
                 console.log(result.user);
-                // navigat(location?.state ? location.state : '/');
                 toast.success("Your LogIn successfull")
-                // navigat(forms);
+
+                // navigat;
+                navigat(location?.state ? location.state : '/');
 
             })
             .catch(error => {
@@ -53,6 +58,9 @@ const LogIn = () => {
                 console.log(result.user);
                 toast.success("Your LogIn successfully");
 
+                // navigat;
+                navigat(location?.state ? location.state : '/');
+
             })
             .catch(error => {
                 console.log(error)
@@ -68,6 +76,9 @@ const LogIn = () => {
             .then((result) => {
                 console.log(result.user);
                 toast.success("Your LogIn successfully");
+
+                // navigat;
+                navigat(location?.state ? location.state : '/');
 
             })
             .catch(error => {

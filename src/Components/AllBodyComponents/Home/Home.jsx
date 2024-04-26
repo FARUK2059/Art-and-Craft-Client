@@ -1,9 +1,39 @@
+import BannerSlider from "./BannerSlider/BannerSlider";
+import CraftCatagory from "./CraftCatagory";
+import CraftItemSection from "./CraftItemSection";
+import Futures from "./Futures";
+import Galary from "./Galary";
 
 
 const Home = () => {
     return (
         <div>
-            This is Home
+
+            {/* Banner Slider section */}
+            <div>
+                <BannerSlider></BannerSlider>
+            </div>
+
+            {/* Craft Item section */}
+            <div>
+                <CraftItemSection></CraftItemSection>
+            </div>
+
+            {/* craft Item Catagory section */}
+            <div>
+                <CraftCatagory></CraftCatagory>
+            </div>
+
+            {/* craft Future section */}
+            <div>
+                <Futures></Futures>
+            </div>
+
+            {/* craft Galary section */}
+            <div>
+                <Galary></Galary>
+            </div>
+
         </div>
     );
 };

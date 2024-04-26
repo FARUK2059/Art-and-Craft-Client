@@ -4,6 +4,8 @@ import Root from "./Root";
 import Home from "../AllBodyComponents/Home/Home";
 import LogIn from "../AllBodyComponents/UserAndReg/LogIn";
 import Register from "../AllBodyComponents/UserAndReg/Register";
+import AddCraftItem from "../AllBodyComponents/AddCraftItem/AddCraftItem";
+import PrivetRout from "../AuthProvider/PrivetRoute/PrivetRout";
 
 const router = createBrowserRouter([
     {
@@ -14,6 +16,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path: "/addcraft",
+                element: <PrivetRout><AddCraftItem></AddCraftItem></PrivetRout>
             },
             {
                 path: "/login",
