@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 
 const AddCraftItem = () => {
@@ -17,8 +18,31 @@ const AddCraftItem = () => {
         const username = form.username.value;
         const email = form.email.value;
 
-        const allCraftValue = { craftURL, price, shortdescription, subitemname, itemName,  processing_time, Customization, stockStatus, username, email  }
-        console.log(allCraftValue);
+        const addCraft = { craftURL, price, shortdescription, subitemname, itemName, processing_time, Customization, stockStatus, username, email }
+        console.log(addCraft);
+
+        // send data to the Server
+        fetch('http://localhost:5000/crafts', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addCraft)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'success',
+                        text: 'CraftiItem added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'ok',
+                    })
+
+                }
+                // setClear(newUser);
+            })
 
     }
 
