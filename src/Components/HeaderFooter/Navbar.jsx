@@ -3,6 +3,7 @@ import userIcon from "../../../public/userIcon.png"
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { LuUser2 } from "react-icons/lu";
+import { MdPersonAdd } from "react-icons/md";
 import { toast } from "react-toastify";
 
 
@@ -21,8 +22,9 @@ const Navbar = () => {
     const links = <>
 
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/blog">blog</NavLink></li>
-        <li><NavLink to="/contact">Contact</NavLink></li>
+        <li><NavLink to="/blog">All Art & craft Items</NavLink></li>
+        <li><NavLink to="/contact">Add Craft Item</NavLink></li>
+        <li><NavLink to="/contact">My Art&Craft List</NavLink></li>
     </>
 
     return (
@@ -44,7 +46,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end gap-2">
                     {
                         user ?
                             <Link to="/">
@@ -57,15 +59,11 @@ const Navbar = () => {
                                 </div>
                             </Link>
                             :
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-4">
-                                <div className="w-10 rounded-full">
-                                    <img alt="Tailwind CSS Navbar component" src={userIcon} />
-                                </div>
-                            </div>
+                            <Link to="/register"><button className="btn btn-active btn-primary rounded-full"><MdPersonAdd />Register</button></Link>
                     }
 
                     {
-                        user ? <Link to="/"><button onClick={handleSignOut} className="btn btn-active btn-primary rounded-full"> <LuUser2 />Sign Out</button></Link> :
+                        user ? <Link to="/"><button onClick={handleSignOut} className="btn btn-active btn-primary rounded-full"> <LuUser2 />Log Out</button></Link> :
                             <Link to="/login"><button className="btn btn-active btn-primary rounded-full"><LuUser2 />Login</button></Link>
                     }
 
