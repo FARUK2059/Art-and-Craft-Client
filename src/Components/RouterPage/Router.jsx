@@ -9,6 +9,7 @@ import PrivetRout from "../AuthProvider/PrivetRoute/PrivetRout";
 import AllCraft from "../AllBodyComponents/AllArtAndCraft/AllCraft";
 import AllCraftDetails from "../AllBodyComponents/AllArtAndCraft/AllCraftDetails";
 import MyCraftList from "../AllBodyComponents/MyCraftList/MyCraftList";
+import MyUpdateItem from "../AllBodyComponents/MyCraftList/MyUpdateItem";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
                 path: "/mycraftlist",
                 element: <MyCraftList></MyCraftList>,
                 loader: () => fetch('http://localhost:5000/crafts')
+            },
+            {
+                path: "/myupdate/:id",
+                element: <MyUpdateItem></MyUpdateItem>,
+                loader: ( { params } ) => fetch(`http://localhost:5000/crafts/${params.id}`)
             },
             {
                 path: "/login",

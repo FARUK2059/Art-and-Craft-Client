@@ -34,7 +34,7 @@ const MyCraftList = () => {
                                 <p className="text-start"><span>Stock Status :</span> {craft.stockStatus}</p>
                                 
                                 <div className="card-actions justify-end">
-                                    <Link to=""><button className="btn btn-primary">Update</button></Link>
+                                    <Link to={`/myupdate/${craft._id}`}><button className="btn btn-primary">Update</button></Link>
                                 </div>
                                 <div className="card-actions justify-end">
                                     <Link to=""><button className="btn btn-primary">Delete</button></Link>
