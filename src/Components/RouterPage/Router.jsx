@@ -6,6 +6,9 @@ import LogIn from "../AllBodyComponents/UserAndReg/LogIn";
 import Register from "../AllBodyComponents/UserAndReg/Register";
 import AddCraftItem from "../AllBodyComponents/AddCraftItem/AddCraftItem";
 import PrivetRout from "../AuthProvider/PrivetRoute/PrivetRout";
+import AllCraft from "../AllBodyComponents/AllArtAndCraft/AllCraft";
+import AllCraftDetails from "../AllBodyComponents/AllArtAndCraft/AllCraftDetails";
+import MyCraftList from "../AllBodyComponents/MyCraftList/MyCraftList";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +23,21 @@ const router = createBrowserRouter([
             {
                 path: "/addcraft",
                 element: <PrivetRout><AddCraftItem></AddCraftItem></PrivetRout>
+            },
+            {
+                path: "/allcraft",
+                element: <AllCraft></AllCraft>,
+                loader: () => fetch('http://localhost:5000/crafts')
+            },
+            {
+                path: "/allCraftDetails/:id",
+                element: <PrivetRout><AllCraftDetails></AllCraftDetails></PrivetRout>,
+                loader: () => fetch('http://localhost:5000/crafts')
+            },
+            {
+                path: "/mycraftlist",
+                element: <MyCraftList></MyCraftList>,
+                loader: () => fetch('http://localhost:5000/crafts')
             },
             {
                 path: "/login",

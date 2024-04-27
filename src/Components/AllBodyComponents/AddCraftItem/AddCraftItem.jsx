@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const AddCraftItem = () => {
+
+    const { user } = useContext(AuthContext);
 
     const handleCraftAdd = e => {
         e.preventDefault();
@@ -12,13 +16,14 @@ const AddCraftItem = () => {
         const subitemname = form.subitemname.value;
         const shortdescription = form.shortdescription.value;
         const price = form.price.value;
+        const rating = form.rating.value;
         const processing_time = form.processing_time.value;
         const Customization = form.Customization.value;
         const stockStatus = form.stockStatus.value;
         const username = form.username.value;
         const email = form.email.value;
 
-        const addCraft = { craftURL, price, shortdescription, subitemname, itemName, processing_time, Customization, stockStatus, username, email }
+        const addCraft = { craftURL, price, shortdescription, subitemname, itemName, processing_time, rating, Customization, stockStatus, username, email }
         console.log(addCraft);
 
         // send data to the Server
@@ -71,7 +76,7 @@ const AddCraftItem = () => {
                                 {/* Craft Item Name */}
                                 <div className="col-span-full sm:col-span-3">
                                     <label className="text-md grid text-start p-2">Item Name</label>
-                                    <input type="text" name="itemname" placeholder="Inpute item_name" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300 p-2" />
+                                    <input type="text" name="itemname" placeholder="Inpute item_name" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300 p-2" required />
                                 </div>
 
                                 {/* Craft subcategory_Name */}
@@ -153,13 +158,13 @@ const AddCraftItem = () => {
                                 {/* User Name */}
                                 <div className="col-span-full sm:col-span-3">
                                     <label className="text-md grid text-start p-2">User Name</label>
-                                    <input type="text" name="username" placeholder="Inpute your name" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300 p-2" />
+                                    <input type="text" name="username" defaultValue={user.displayName} placeholder="Inpute your name" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300 p-2" />
                                 </div>
 
                                 {/* User Email */}
                                 <div className="col-span-full sm:col-span-3">
                                     <label className="text-md grid text-start p-2">User Email</label>
-                                    <input type="text" name="email" placeholder="Inpute your email" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300 p-2" />
+                                    <input type="text" name="email"  value={user.email} placeholder="Inpute your email" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300 p-2" required />
                                 </div>
 
                                 {/* Submit Button */}
