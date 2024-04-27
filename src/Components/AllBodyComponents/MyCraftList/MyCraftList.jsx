@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const MyCraftList = () => {
@@ -8,13 +9,47 @@ const MyCraftList = () => {
     const { user } = useContext(AuthContext);
     // console.log(user);
 
-    const emaiUserlData = useLoaderData()
+    const emailUserData = useLoaderData()
+    const [emailCraft, setEnailCraft] = useState(emailUserData);
     // console.log(emailData);
 
-    const singlUserData = emaiUserlData.filter((item) =>  item?.email === user.email);
-    console.log(singlUserData);
+    const singilUserData = emailCraft.filter((item) => item?.email === user.email);
+    console.log(singilUserData);
 
-    // const { craftURL, itemName, Customization, email, shortdescription, price, rating, processing_time, stockStatus, subitemname, username, _id } = singlUserData ;
+    const handleDeleteCraft = _id => {
+        
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+
+
+                    fetch(`http://localhost:5000/crafts/${_id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            if (data.deletedCount > 0) {
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Your Craft Item has been deleted.",
+                                    icon: "success"
+                                });
+                                const remainig = emailCraft.filter(craft => craft._id !== _id);
+                                setEnailCraft(remainig);
+                            }
+                        })
+                }
+            });
+    }
 
 
     return (
@@ -22,7 +57,7 @@ const MyCraftList = () => {
         <div>
             <div>
                 {
-                    singlUserData.map((craft) => <div key={craft._id}>
+                    singilUserData.map((craft) => <div key={craft._id}>
 
                         <div className="card lg:card-side bg-white shadow-xl">
                             <figure><img className="w-60" src={craft.craftURL} alt="Album" /></figure>
@@ -32,12 +67,12 @@ const MyCraftList = () => {
                                 <p className="text-start"><span>Rating :</span> {craft.rating}</p>
                                 <p className="text-start"><span>Customization :  </span>{craft.Customization}</p>
                                 <p className="text-start"><span>Stock Status :</span> {craft.stockStatus}</p>
-                                
+
                                 <div className="card-actions justify-end">
                                     <Link to={`/myupdate/${craft._id}`}><button className="btn btn-primary">Update</button></Link>
                                 </div>
                                 <div className="card-actions justify-end">
-                                    <Link to=""><button className="btn btn-primary">Delete</button></Link>
+                                    <button onClick={ () => handleDeleteCraft(craft._id) } className="btn btn-primary">Delete</button>
                                 </div>
                             </div>
                         </div>
