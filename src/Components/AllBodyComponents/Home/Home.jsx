@@ -1,6 +1,6 @@
+import CraftItemSection from "./ArtAndCraftItem/CraftItemSection";
 import BannerSlider from "./BannerSlider/BannerSlider";
 import CraftCatagory from "./CraftCatagory";
-import CraftItemSection from "./CraftItemSection";
 import Futures from "./Futures";
 import Galary from "./Galary";
 
