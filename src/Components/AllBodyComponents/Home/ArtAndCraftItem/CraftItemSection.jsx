@@ -1,10 +1,22 @@
+
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 
 const CraftItemSection = () => {
 
+
+    // //////////////////////////////////////
     const cetagoryData = useLoaderData();
-    console.log(cetagoryData);
+    // console.log(cetagoryData);
+
+    // ///////////////////////////
+    
+
+    const [options, setOptions] = useState();
+
+    
+
 
     // craftURL, price, shortdescription, subitemname, itemName, processing_time, rating, Customization, stockStatus, _id
 
@@ -18,6 +30,19 @@ const CraftItemSection = () => {
                 </div>
 
             </div>
+
+            {/* /////////////////////////////////////////////////////////////////////////////////////// */}
+
+            <div>
+                <select onChange={(e) => setOptions(e.target.value)}>
+                    {
+                        cetagoryData.map((opts, i) => <option key={i}>{opts.subcategory_name}</option>)
+                    }
+                </select>
+                <h1>{options}</h1>
+            </div>
+
+            {/* ////////////////////////////////////////////////////////////////////////////////////////////// */}
 
             {/* DropDown meno section */}
             <div>
