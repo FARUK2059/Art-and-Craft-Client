@@ -5,6 +5,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { LuUser2 } from "react-icons/lu";
 import { MdPersonAdd } from "react-icons/md";
 import { toast } from "react-toastify";
+import { Tooltip } from 'react-tooltip'
 
 
 const Navbar = () => {
@@ -57,7 +58,7 @@ const Navbar = () => {
 
     return (
         <div >
-            <div  className="navbar bg-[#F5F5F5] hover:bg-slate-300 text-black ">
+            <div className="navbar bg-[#F5F5F5] hover:bg-slate-300 text-black ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -78,12 +79,17 @@ const Navbar = () => {
                     {
                         user ?
                             <Link to="/">
-                                <div className="tooltip tooltip-left " data-tip={user?.displayName || "not found"}>
+                                <div data-tooltip-id="my-tooltip-inline"
+                                    data-tooltip-content={user?.displayName || "not found"} data-tooltip-place="left-start" >
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-4">
                                         <div className="w-10 rounded-full border border-black">
-                                            <img alt="null " src={user?.photoURL } />
+                                            <img alt="null " src={user?.photoURL} />
                                         </div>
                                     </div>
+                                    <Tooltip
+                                        id="my-tooltip-inline"
+                                        style={{ backgroundColor: "rgb(30, 17, 214)", color: "#FFFF00" }}
+                                    />
                                 </div>
                             </Link>
                             :

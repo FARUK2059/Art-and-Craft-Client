@@ -1,6 +1,7 @@
 
 import { Link, useLoaderData } from "react-router-dom";
 import { PiCreditCardDuotone } from "react-icons/pi";
+import { Tooltip } from 'react-tooltip'
 
 
 const AllCraft = () => {
@@ -41,12 +42,14 @@ const AllCraft = () => {
                                                 <td className="text-center">{craft.Customization}</td>
                                                 <td>
                                                     <div className="flex gap-2 justify-center">
-                                                        <div className="tooltip" data-tip="Details">
+                                                        <div data-tooltip-id="my-tooltip-inline"
+                                                            data-tooltip-content="View Details">
                                                             <Link to={`/allCraftDetails/${craft._id}`}><button className="btn btn-sm bg-slate-100 btn-primary text-black"><PiCreditCardDuotone /></button></Link>
                                                         </div>
-                                                        {/* <div className="tooltip" data-tip="Delete">
-                                                            <button onClick={() => handleDelete(user._id)} className="btn btn-sm bg-slate-100 btn-primary text-black"><MdDelete /></button>
-                                                        </div> */}
+                                                        <Tooltip
+                                                            id="my-tooltip-inline"
+                                                            style={{ backgroundColor: "rgb(204, 224, 22)", color: "#222",  }}
+                                                        />
                                                     </div>
                                                 </td>
                                             </tr>
