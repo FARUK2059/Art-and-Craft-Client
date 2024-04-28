@@ -11,7 +11,7 @@ const CraftCatagory = () => {
     console.log(category);
 
     useEffect(() => {
-        fetch('http://localhost:5000/crafts')
+        fetch('https://art-and-craft-store-backend-server.vercel.app/crafts')
             .then(res => res.json())
             .then(data => setCategory(data));
     }, [])

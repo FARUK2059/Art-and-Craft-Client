@@ -18,22 +18,22 @@ const Navbar = () => {
 
     // set theme state in localStorage on mount & also update localStorage on state change
     useEffect(() => {
-        localStorage.setItem('theme', theme)
-        const localTheme = localStorage.getItem('theme')
-
-        // add custom data-theme attribute
-        document.querySelector('html').setAttribute('data-theme', localTheme)
-    }, [theme])
-
-    // update state on toggle
-    const handleToggle = e => {
-        console.log(e.target.checked);
+        const localTheme = localStorage.getItem("theme");
+        setTheme(localTheme);
+      }, []);
+    
+      useEffect(() => {
+        localStorage.setItem("theme", theme);
+        document.querySelector("html").setAttribute("data-theme", theme);
+      }, [theme]);
+    
+      const handleToggle = (e) => {
         if (e.target.checked) {
-            setTheme('synthwave')
+          setTheme("night");
         } else {
-            setTheme('light')
+          setTheme("light");
         }
-    }
+      };
 
     const handleSignOut = () => {
         logOut()

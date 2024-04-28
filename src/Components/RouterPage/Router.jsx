@@ -22,17 +22,17 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/cetagory')
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/cetagory')
             },
             {
                 path: "/craftmaindetails/:id",
-                element: <CraftMainDetails></CraftMainDetails>,
-                loader: () => fetch('http://localhost:5000/crafts')
+                element: <PrivetRout><CraftMainDetails></CraftMainDetails></PrivetRout>,
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/crafts')
             },
             {
                 path: "/homedetails/:id",
-                element: <ArtCraftDetails></ArtCraftDetails>,
-                loader: () => fetch('http://localhost:5000/cetagory')
+                element: <PrivetRout><ArtCraftDetails></ArtCraftDetails></PrivetRout>,
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/cetagory')
             },
             {
                 path: "/addcraft",
@@ -41,22 +41,22 @@ const router = createBrowserRouter([
             {
                 path: "/allcraft",
                 element: <AllCraft></AllCraft>,
-                loader: () => fetch('http://localhost:5000/crafts')
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/crafts')
             },
             {
                 path: "/allCraftDetails/:id",
                 element: <PrivetRout><AllCraftDetails></AllCraftDetails></PrivetRout>,
-                loader: () => fetch('http://localhost:5000/crafts')
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/crafts')
             },
             {
                 path: "/mycraftlist",
                 element: <PrivetRout><MyCraftList></MyCraftList></PrivetRout>,
-                loader: () => fetch('http://localhost:5000/crafts')
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/crafts')
             },
             {
                 path: "/myupdate/:id",
                 element: <PrivetRout><MyUpdateItem></MyUpdateItem></PrivetRout>,
-                loader: ( { params } ) => fetch(`http://localhost:5000/crafts/${params.id}`)
+                loader: ( { params } ) => fetch(`https://art-and-craft-store-backend-server.vercel.app/crafts/${params.id}`)
             },
             {
                 path: "/login",
