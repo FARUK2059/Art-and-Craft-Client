@@ -63,8 +63,7 @@ export default function BannerSlider() {
                             <h1 className="mb-5 text-5xl font-extrabold text-white">New Product Arrived 10% Discount</h1>
                             <p className="mb-5 text-xl font-semibold text-green-200">
                                 Wool Clothing</p>
-                            <div className='lg:flex gap-4'>
-                                
+                            <div className='lg:flex text-center justify-center gap-4'>
                                 <button className="btn btn-primary">Get Offer now</button>
                             </div>
                         </div>

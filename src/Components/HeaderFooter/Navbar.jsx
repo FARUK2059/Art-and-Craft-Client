@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import userIcon from "../../../public/userIcon.png"
+// import userIcon from "../../../public/userIcon.png"
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { LuUser2 } from "react-icons/lu";
@@ -80,8 +80,8 @@ const Navbar = () => {
                             <Link to="/">
                                 <div className="tooltip tooltip-left " data-tip={user?.displayName || "not found"}>
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-4">
-                                        <div className="w-10 rounded-full">
-                                            <img alt="null" src={user?.photoURL || userIcon} />
+                                        <div className="w-10 rounded-full border border-black">
+                                            <img alt="null " src={user?.photoURL } />
                                         </div>
                                     </div>
                                 </div>

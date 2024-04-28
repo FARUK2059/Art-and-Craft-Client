@@ -14,23 +14,23 @@ const Home = () => {
                 <BannerSlider></BannerSlider>
             </div>
 
-            {/* Craft Item section */}
-            <div>
-                <CraftItemSection></CraftItemSection>
-            </div>
-
-            {/* craft Item Catagory section */}
+            {/* craft Item  section */}
             <div>
                 <CraftCatagory></CraftCatagory>
             </div>
 
-            {/* craft Future section */}
+            {/* Art & Craft Item section chalange extra */}
             <div>
+                <CraftItemSection></CraftItemSection>
+            </div>
+
+            {/* craft Future section */}
+            <div className="p-6 ">
                 <Futures></Futures>
             </div>
 
             {/* craft Galary section */}
-            <div>
+            <div className="p-6">
                 <Galary></Galary>
             </div>
 

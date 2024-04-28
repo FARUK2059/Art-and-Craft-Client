@@ -51,18 +51,20 @@ const MyUpdateItem = () => {
 
 
     return (
-        <div>
+        <div className="p-6">
             <div>
-                <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
+                <section className="p-6 bg-[#a1d7c9] hover:bg-slate-500 rounded-lg text-black">
+
+                    {/* Title */}
+                    <div>
+                        <div className="mt-4 p-4">
+                            <h1 className="mb-5 text-4xl p-2 text-black font-bold">Update Your Art & Craft</h1>
+                            <p className="mb-5 text-xl font-semibold text-green-800 ">Art & Craft,  wooden spoons, spatulas, and ladles for cooking and serving.</p>
+                        </div>
+                    </div>
 
                     <form onSubmit={handleMyCraftUpdate} className="container flex flex-col mx-auto space-y-12">
                         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
-
-                            {/* title section */}
-                            <div className="space-y-2 col-span-full ">
-                                <p className="font-medium">Personal Inormation</p>
-                                <p className="text-xs">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci fuga autem eum!</p>
-                            </div>
 
                             <div className="grid grid-cols-6 gap-4 col-span-full">
 

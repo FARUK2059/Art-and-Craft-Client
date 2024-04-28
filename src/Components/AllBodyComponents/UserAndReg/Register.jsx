@@ -84,7 +84,7 @@ const Register = () => {
     return (
 
         <div data-aos="fade-up" data-aos-duration="1500" className="mt-4 z-0">
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://images.pexels.com/photos/460695/pexels-photo-460695.jpeg?auto=compress&cs=tinysrgb&w=600)' }}>
+            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://cdn.pixabay.com/photo/2024/04/08/16/07/diversity-8683856_1280.jpg)' }}>
                 <div className="hero-overlay bg-opacity-30"></div>
                 <div className="hero-content text-center text-neutral-content">
 
@@ -101,7 +101,7 @@ const Register = () => {
                                         <label className="label">
                                             <span className="label-text text-blue-200 font-medium">Your Name</span>
                                         </label>
-                                        <input type="text" name="name" id="name" placeholder="Enter your name" className="w-full px-1 py-3 rounded-md  dark:bg-gray-50 dark:text-gray-800 border  focus:dark:border-violet-600" required />
+                                        <input type="text" name="name" id="name" placeholder="Enter your name" className="w-full px-1 py-3 rounded-md  dark:bg-gray-50 text-yellow-600 border  focus:dark:border-violet-600" required />
                                         <div className="label ">
                                             <span className="label-text-alt text-red-400">{errorName}</span>
                                         </div>
@@ -112,7 +112,7 @@ const Register = () => {
                                         <label className="label">
                                             <span className="label-text text-blue-200 font-medium">Photo URL</span>
                                         </label>
-                                        <input type="text" name="photo" id="photo" placeholder="Enter your photo URL" className="w-full px-1 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 border  focus:dark:border-violet-600" required />
+                                        <input type="text" name="photo" id="photo" placeholder="Enter your photo URL" className="w-full px-1 py-3 text-yellow-600 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 border  focus:dark:border-violet-600" required />
                                     </div>
 
                                     {/* Email */}
@@ -120,7 +120,7 @@ const Register = () => {
                                         <label className="label">
                                             <span className="label-text text-blue-200 font-medium">Email address</span>
                                         </label>
-                                        <input type="email" name="email" id="email" placeholder="Enter your email address" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 border  focus:dark:border-violet-600" required />
+                                        <input type="email" name="email" id="email" placeholder="Enter your email address" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 border text-yellow-600 focus:dark:border-violet-600" required />
                                         <div className="label ">
                                             <span className="label-text-alt text-red-400"></span>
                                         </div>
@@ -132,7 +132,7 @@ const Register = () => {
                                             <span className="label-text text-blue-200 font-medium">Password</span>
                                         </label>
                                         <div className="relative">
-                                            <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Enter your password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 border focus:dark:border-violet-600" required />
+                                            <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Enter your password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 border text-yellow-600 focus:dark:border-violet-600" required />
                                             <span className="absolute mt-4 lg:right-4 right-4 md:right-4" onClick={() => setShowPassword(!showPassword)} >{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</span>
 
                                             <div className="label ">
