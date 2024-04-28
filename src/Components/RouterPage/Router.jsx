@@ -11,6 +11,7 @@ import AllCraftDetails from "../AllBodyComponents/AllArtAndCraft/AllCraftDetails
 import MyCraftList from "../AllBodyComponents/MyCraftList/MyCraftList";
 import MyUpdateItem from "../AllBodyComponents/MyCraftList/MyUpdateItem";
 import ArtCraftDetails from "../AllBodyComponents/Home/ArtAndCraftItem/ArtCraftDetails";
+import CraftMainDetails from "../AllBodyComponents/Home/Craft-Item/CraftMainDetails";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/cetagory')
+            },
+            {
+                path: "/craftmaindetails/:id",
+                element: <CraftMainDetails></CraftMainDetails>,
+                loader: () => fetch('http://localhost:5000/crafts')
             },
             {
                 path: "/homedetails/:id",
@@ -49,7 +55,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/myupdate/:id",
-                element: <MyUpdateItem></MyUpdateItem>,
+                element: <PrivetRout><MyUpdateItem></MyUpdateItem></PrivetRout>,
                 loader: ( { params } ) => fetch(`http://localhost:5000/crafts/${params.id}`)
             },
             {

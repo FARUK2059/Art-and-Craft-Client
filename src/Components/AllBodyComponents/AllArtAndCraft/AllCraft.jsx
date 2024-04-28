@@ -2,9 +2,18 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { PiCreditCardDuotone } from "react-icons/pi";
 import { Tooltip } from 'react-tooltip'
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const AllCraft = () => {
+
+    const { updateTitle } = useContext(AuthContext);
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle('All Art & Craft | Craft Store');
+    }, [updateTitle]);
 
     const craftItem = useLoaderData();
     console.log(craftItem);
@@ -48,7 +57,7 @@ const AllCraft = () => {
                                                         </div>
                                                         <Tooltip
                                                             id="my-tooltip-inline"
-                                                            style={{ backgroundColor: "rgb(204, 224, 22)", color: "#222",  }}
+                                                            style={{ backgroundColor: "rgb(204, 224, 22)", color: "#222", }}
                                                         />
                                                     </div>
                                                 </td>

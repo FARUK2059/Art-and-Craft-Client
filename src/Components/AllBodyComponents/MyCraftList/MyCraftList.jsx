@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
@@ -6,8 +6,13 @@ import Swal from "sweetalert2";
 
 const MyCraftList = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, updateTitle } = useContext(AuthContext);
     // console.log(user);
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle('My Craft | Craft Store');
+    }, [updateTitle]);
 
     const emailUserData = useLoaderData()
     const [emailCraft, setEnailCraft] = useState(emailUserData);

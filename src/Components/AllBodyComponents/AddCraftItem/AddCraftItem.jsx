@@ -1,11 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const AddCraftItem = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, updateTitle } = useContext(AuthContext);
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle('Add Craft | Craft Store');
+    }, [updateTitle]);
 
     const handleCraftAdd = e => {
         e.preventDefault();

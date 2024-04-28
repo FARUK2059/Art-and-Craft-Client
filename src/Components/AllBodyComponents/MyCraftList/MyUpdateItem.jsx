@@ -1,8 +1,17 @@
+import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const MyUpdateItem = () => {
+
+    const { updateTitle } = useContext(AuthContext);
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle('My Craft Update | Craft Store');
+    }, [updateTitle]);
 
     const myUpdateCraft = useLoaderData();
     console.log(myUpdateCraft);

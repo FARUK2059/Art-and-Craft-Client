@@ -1,11 +1,22 @@
+import { useContext, useEffect } from "react";
 import CraftItemSection from "./ArtAndCraftItem/CraftItemSection";
 import BannerSlider from "./BannerSlider/BannerSlider";
-import CraftCatagory from "./CraftCatagory";
+import CraftCatagory from "./Craft-Item/CraftCatagory";
+
 import Futures from "./Futures";
 import Galary from "./Galary";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Home = () => {
+
+    const { updateTitle } = useContext(AuthContext);
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle('Home | Craft Store');
+    }, [updateTitle]);
+
     return (
         <div>
 
@@ -15,7 +26,7 @@ const Home = () => {
             </div>
 
             {/* craft Item  section */}
-            <div>
+            <div className="lg:p-8 p-2">
                 <CraftCatagory></CraftCatagory>
             </div>
 
