@@ -6,6 +6,7 @@ import { LuUser2 } from "react-icons/lu";
 import { MdPersonAdd } from "react-icons/md";
 import { toast } from "react-toastify";
 import { Tooltip } from 'react-tooltip'
+import 'animate.css';
 
 
 const Navbar = () => {
@@ -57,7 +58,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div >
+        <div className="animate__zoomIn animate__animated  animate__slow" >
             <div className="navbar bg-[#F5F5F5] hover:bg-slate-300 text-black ">
                 <div className="navbar-start">
                     <div className="dropdown">

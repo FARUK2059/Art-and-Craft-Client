@@ -33,10 +33,10 @@ const CraftCatagory = () => {
                 </div>
 
                 {/* Card section */}
-                <div className="grid lg:grid-cols-2 gap-6 p-6">
+                <div  className="grid lg:grid-cols-2 gap-6 p-6">
                     {
                         category.map((craft) =>
-                            <div key={craft._id}>
+                            <div   key={craft._id}>
                                 <div className="card lg:h-72 lg:card-side bg-slate-300 shadow-xl p-2 hover:bg-info hover:text-blue-950">
                                     <figure><img className="w-60 p-4 border bg-slate-400 rounded-lg lg:ml-4" src={craft.craftURL} alt="Album" /></figure>
                                     <div className="card-body">

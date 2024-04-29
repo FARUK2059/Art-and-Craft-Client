@@ -38,6 +38,7 @@
 - react-tooltip
 - sort-by
 - sweetalert2
+- react-simple-typewriter
 - swiper
 
 ## Get Started
