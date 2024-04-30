@@ -32,7 +32,7 @@ const AddCraftItem = () => {
         console.log(addCraft);
 
         // send data to the Server
-        fetch('http://localhost:5000/crafts', {
+        fetch('https://art-and-craft-store-backend-server.vercel.app/crafts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -48,7 +48,9 @@ const AddCraftItem = () => {
                         text: 'CraftiItem added successfully',
                         icon: 'success',
                         confirmButtonText: 'ok',
+                        
                     })
+                    form.reset();
 
                 }
                 // setClear(newUser);

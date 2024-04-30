@@ -3,7 +3,7 @@
 ![CraftyHub Logo](https://bw-craftxtore.bzotech.com/demo4/wp-content/uploads/2023/10/logo-home4.png)
 
 ## Live Site URL
-[Visit CraftyHub](https://www.craftyhub.com)
+[Visit CraftyHub](https://art-and-craft-store-7c527.web.app/)
 
 ## Selected Category: Jute & Wooden Crafts
 

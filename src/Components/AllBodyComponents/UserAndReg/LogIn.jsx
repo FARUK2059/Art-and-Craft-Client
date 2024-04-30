@@ -57,7 +57,6 @@ const LogIn = () => {
             .then((result) => {
                 console.log(result.user);
                 toast.success("Your LogIn successfully");
-
                 // navigat;
                 navigat(location?.state ? location.state : '/');
 

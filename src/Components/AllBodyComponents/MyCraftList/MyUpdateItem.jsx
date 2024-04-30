@@ -36,7 +36,7 @@ const MyUpdateItem = () => {
         console.log(addUpdateCraft);
 
         // Update coffee function and send to bongoDB
-        fetch(`http://localhost:5000/crafts/${_id}`, {
+        fetch(`https://art-and-craft-store-backend-server.vercel.app/crafts/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

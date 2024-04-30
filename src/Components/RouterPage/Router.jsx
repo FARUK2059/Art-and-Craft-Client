@@ -12,7 +12,7 @@ import MyCraftList from "../AllBodyComponents/MyCraftList/MyCraftList";
 import MyUpdateItem from "../AllBodyComponents/MyCraftList/MyUpdateItem";
 import CraftMainDetails from "../AllBodyComponents/Home/Craft-Item/CraftMainDetails";
 import SubCetagory from "../AllBodyComponents/Home/ArtsAndCraft2/SubCetagory";
-// import SubCetaDetails from "../AllBodyComponents/Home/ArtsAndCraft2/SubCetaDetails";
+import SubCetaDetails from "../AllBodyComponents/Home/ArtsAndCraft2/SubCetaDetails";
 
 const router = createBrowserRouter([
     {
@@ -23,18 +23,18 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/painting')
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/painting')
             },
             {
                 path: "/subcetagory/:id",
                 element: <SubCetagory></SubCetagory>,
-                loader: () => fetch('http://localhost:5000/painting')
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/painting')
             },
-            // {
-            //     path: "/subCetDetails/:id",
-            //     element: <SubCetaDetails></SubCetaDetails>,
-            //     loader: () => fetch('http://localhost:5000/painting')
-            // },
+            {
+                path: "/subCetDetails/:id",
+                element: <SubCetaDetails></SubCetaDetails>,
+                loader: () => fetch('https://art-and-craft-store-backend-server.vercel.app/painting')
+            },
             {
                 path: "/craftmaindetails/:id",
                 element: <PrivetRout><CraftMainDetails></CraftMainDetails></PrivetRout>,
