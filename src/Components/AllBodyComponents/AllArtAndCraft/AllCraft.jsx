@@ -21,16 +21,16 @@ const AllCraft = () => {
 
     return (
         <div>
-            <div className="lg:p-12">
-                <div className="lg:w-full min-h-full bg-sky-500 border-green-700/100 border-4">
+            <div className="lg:p-12 -z-1">
+                <div className="lg:w-full min-h-full  border-green-700/100 border-4 ">
                     <h2 className="bg-green-700 p-4 text-white text-3xl font-bold "> Total Craft Item :  {craftItem.length}</h2>
-                    <div className="card card-body lg:m-24 md:p-6 p-2 grid">
+                    <div className="card card-body lg:m-24 md:p-6 p-2 -z-10 lg:z-0">
 
-                        <div className="lg:w-auto text-white text-sm">
+                        <div className="lg:w-auto  text-sm ">
                             <div className="overflow-x-auto">
                                 <table className="table ">
                                     {/* head */}
-                                    <thead className="bg-green-500">
+                                    <thead className="bg-green-500 hover:bg-green-400">
                                         <tr className="lg:text-lg text-xs text-white">
                                             <th>Item Name</th>
                                             <th>Price</th>
@@ -44,7 +44,7 @@ const AllCraft = () => {
                                     {
                                         craftItem.map(craft => <tbody key={craft._id}>
 
-                                            <tr className="hover">
+                                            <tr className="hover ">
                                                 <th>{craft.itemName}</th>
                                                 <td>{craft.price}</td>
                                                 <td>{craft.stockStatus}</td>

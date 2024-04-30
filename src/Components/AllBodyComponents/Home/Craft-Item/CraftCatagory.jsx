@@ -37,15 +37,15 @@ const CraftCatagory = () => {
                     {
                         category.map((craft) =>
                             <div   key={craft._id}>
-                                <div className="card lg:h-72 lg:card-side bg-slate-300 shadow-xl p-2 hover:bg-info hover:text-blue-950">
+                                <div  className="card lg:h-72 lg:card-side bg-slate-300 shadow-xl p-2 hover:bg-blue-100 hover:text-blue-950">
                                     <figure><img className="w-60 p-4 border bg-slate-400 rounded-lg lg:ml-4" src={craft.craftURL} alt="Album" /></figure>
                                     <div className="card-body">
-                                        <h2 className="card-title text-yellow-700 text-center text-2xl font-semibold"> {craft.itemName}</h2>
-                                        <p className="text-start"><span className="text-black font-medium hover:text-blue-700">Category :</span> {craft.subitemname}</p>
-                                        <p className="text-start"><span className="text-black font-medium hover:text-blue-700">Price :</span> {craft.price}</p>
-                                        <p className="text-start"><span className="text-black font-medium hover:text-blue-700">Customization :  </span>{craft.Customization}</p>
+                                        <h2 className="card-title hover:text-blue-600 text-yellow-700 text-center text-2xl font-semibold"> {craft.itemName}</h2>
+                                        <p className="text-start hover:bg-green-200 "><span className="text-black font-bold hover:text-blue-700">Category :</span> {craft.subitemname}</p>
+                                        <p className="text-start hover:bg-green-200 "><span className="text-black font-bold hover:text-blue-700">Price :</span> {craft.price}</p>
+                                        <p className="text-start hover:bg-green-200 "><span className="text-black font-bold hover:text-blue-700">Customization :  </span>{craft.Customization}</p>
                                         <div className="card-actions justify-end">
-                                            <Link to={`/craftmaindetails/${craft._id}`}><button className="btn btn-primary">View Details</button></Link>
+                                            <Link to={`/craftmaindetails/${craft._id}`}><button className="btn btn-primary hover:btn-warning">View Details</button></Link>
                                         </div>
                                     </div>
                                 </div>

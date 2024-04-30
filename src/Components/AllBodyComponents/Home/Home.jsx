@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
-import CraftItemSection from "./ArtAndCraftItem/CraftItemSection";
 import BannerSlider from "./BannerSlider/BannerSlider";
 import CraftCatagory from "./Craft-Item/CraftCatagory";
 
 import Futures from "./Futures";
 import Galary from "./Galary";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Painting from "./ArtsAndCraft2/Painting";
 
 
 const Home = () => {
@@ -30,9 +30,9 @@ const Home = () => {
                 <CraftCatagory></CraftCatagory>
             </div>
 
-            {/* Art & Craft Item section chalange extra */}
+            {/* Art & Craft Item section chalange  */}
             <div>
-                <CraftItemSection></CraftItemSection>
+                <Painting></Painting>
             </div>
 
             {/* craft Future section */}
