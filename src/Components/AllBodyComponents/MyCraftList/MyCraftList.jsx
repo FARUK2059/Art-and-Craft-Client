@@ -6,8 +6,10 @@ import Swal from "sweetalert2";
 
 const MyCraftList = () => {
 
+    // const [filter, setFilter] = useState('all');
     const { user, updateTitle } = useContext(AuthContext);
     // console.log(user);
+
 
     // Update Dynamic title Setup
     useEffect(() => {
@@ -16,11 +18,30 @@ const MyCraftList = () => {
 
     const emailUserData = useLoaderData()
     const [emailCraft, setEnailCraft] = useState(emailUserData);
-    // console.log(emailData);
 
     const singilUserData = emailCraft.filter((item) => item?.email === user.email);
     console.log(singilUserData);
 
+    // //////////////////
+    const [filteredItems, setFilteredItems] = useState(singilUserData);
+    const [filter, setFilter] = useState('All');
+
+
+    // Function to handle filter change
+    const handleFilterChange = (event) => {
+        setFilter(event.target.value);
+    };
+
+    useEffect(() => {
+        if (filter === 'All') {
+            setFilteredItems(singilUserData);
+        } else {
+            const filteredData = singilUserData.filter(item => item.Customization.toLowerCase() === filter.toLowerCase());
+            setFilteredItems(filteredData);
+        }
+    }, [filter, singilUserData]);
+
+    // Delete Function 
     const handleDeleteCraft = _id => {
 
         Swal.fire({
@@ -66,9 +87,17 @@ const MyCraftList = () => {
                     <h1 className="mb-5 text-4xl p-2 text-black font-bold">Your Total Art and Craft : {singilUserData.length} </h1>
                 </div>
             </div>
+
+            {/* Filter option */}
+            <select value={filter} onChange={handleFilterChange} className="btn btn-primary hover:btn-warning text-lg">
+                <option value="All">Customization: All</option>
+                <option value="yes">Customization: Yes</option>
+                <option value="no">Customization: No</option>
+            </select>
+
             <div>
                 {
-                    singilUserData.map((craft) => <div key={craft._id}>
+                    filteredItems.map((craft) => <div key={craft._id}>
 
                         <div className="p-10 text-black lg:ml-24  lg:mr-10">
                             <div className="card lg:card-side bg-neutral-200 hover:bg-neutral-400 shadow-xl p-6">
