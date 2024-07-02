@@ -2,10 +2,19 @@
 
 ![CraftyHub Logo](https://bw-craftxtore.bzotech.com/demo4/wp-content/uploads/2023/10/logo-home4.png)
 
-## Live Site URL
-[Visit CraftyHub](https://art-and-craft-store-7c527.web.app/)
+## <img  alt="coding" width="20" src="https://github.com/FARUK2059/Art-and-Craft-Client/blob/main/src/assets/icons8-internet.gif?raw=true">  Live Site URL :  [Visit CraftXtor](https://art-and-craft-store-7c527.web.app/)
 
-## Selected Category: Jute & Wooden Crafts
+
+## Category: Jute & Wooden Crafts
+
+## Overview
+- **Art & Craft Categories Section**: Explore over 6 subcategories within the Jute & Wooden Crafts category, each showcasing stunning handcrafted items.
+- **Subcategory Exploration**: Dive deeper into specific subcategories and explore a curated selection of crafts tailored to your interests.
+- **Interactive Elements**: Enhance user engagement with dynamic animations and tooltips powered by React libraries like Lottie React and React-tooltip.
+- **Personalized Experience**: Manage your own craft list with the ability to add, update, and delete items, ensuring a customized browsing experience.
+- **Responsive Design**: Enjoy a seamless browsing experience across devices with a fully responsive design optimized for desktop, tablet, and mobile.
+
+<br>
 
 ## Features
 - **Wide Variety**: Explore a diverse collection of wooden and jute crafts ranging from furniture to jewelry.
@@ -14,12 +23,6 @@
 - **Artisan Showcase**: Discover unique artisanal creations and support talented craftsmen from around the world.
 - **Theme Toggle**: Customize your browsing experience with a dark/light theme toggle for enhanced readability.
 
-## Challenges Completed
-- **Art & Craft Categories Section**: Explore over 6 subcategories within the Jute & Wooden Crafts category, each showcasing stunning handcrafted items.
-- **Subcategory Exploration**: Dive deeper into specific subcategories and explore a curated selection of crafts tailored to your interests.
-- **Interactive Elements**: Enhance user engagement with dynamic animations and tooltips powered by React libraries like Lottie React and React-tooltip.
-- **Personalized Experience**: Manage your own craft list with the ability to add, update, and delete items, ensuring a customized browsing experience.
-- **Responsive Design**: Enjoy a seamless browsing experience across devices with a fully responsive design optimized for desktop, tablet, and mobile.
 
 ## Technologies Used Packege
 - animate.css,
