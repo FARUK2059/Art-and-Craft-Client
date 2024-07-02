@@ -1,6 +1,7 @@
-# CraftyHub - Your Ultimate Destination for Handcrafted Creations
 
-![CraftyHub Logo](https://bw-craftxtore.bzotech.com/demo4/wp-content/uploads/2023/10/logo-home4.png)
+<h3 align="center"><img align="center" src="https://bw-craftxtore.bzotech.com/demo4/wp-content/uploads/2023/10/logo-home4.png" /><h3>
+
+# CraftXtor - Your Ultimate Destination for Handcrafted Creations
 
 ## <img  alt="coding" width="20" src="https://github.com/FARUK2059/Art-and-Craft-Client/blob/main/src/assets/icons8-internet.gif?raw=true">  Live Site URL :  [Visit CraftXtor](https://art-and-craft-store-7c527.web.app/)
 
